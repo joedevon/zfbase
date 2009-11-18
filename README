@@ -1,0 +1,17 @@
+The base files that are needed to start a project .
+
+Remove the semi column in the file application.ini of config folder to establish connection with db
+
+The admin.phtml is the admin layout . Can change to your needs .
+
+The default.phtml is the default layout . You can change this too .
+
+Thinking whether an authentication is needed for admin :) .
+
+Author : Hari K T
+
+Website : http://harikt.com
+
+Credits and Thanks to zend framework , zendcasts , amazium , Nick Belhomme , akrabat ...
+
+Disclaimer : Use of this is upto you . Don't blame me if something went wrong.
