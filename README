@@ -6,11 +6,13 @@ The admin.phtml is the admin layout . Can change to your needs .
 
 The default.phtml is the default layout . You can change this too .
 
-Thinking whether an authentication is needed for admin :) .
+Not adding authentication . Refer the zendblog how acl and auth works if you are unfamiliar.
 
-Author : Hari K T
+{ I am not a master( no one is born as a master :) ), so love to hear if there is some other nice way to do this . }
 
-Website : http://harikt.com
+Author : Hari K T .
+
+Website and Blog : http://harikt.com
 
 Credits and Thanks to zend framework , zendcasts , amazium , Nick Belhomme , akrabat ...
 
