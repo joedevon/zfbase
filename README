@@ -1,3 +1,12 @@
+This is a fork of Hari K T's project (http://harikt.com)
+http://github.com/harikt/zfbase
+
+I'm adding directory structure per:
+http://framework.zend.com/manual/en/project-structure.project.html
+
+
+
+Original README:
 The base files that are needed to start a project .
 
 Remove the semi column in the file application.ini of config folder to establish connection with db

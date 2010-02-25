@@ -1,0 +1,7 @@
+*.swp
+*.svn
+*.DS_Store
+.buildpath
+.project
+.zfproject.xml
+*.settings
