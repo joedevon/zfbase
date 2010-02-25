@@ -1,18 +1,68 @@
-<?php echo $this->doctype() ?>
-<html>
+<?php 
+	//Trying to follow guidelines from: http://diveintohtml5.org/semantics.html
+	echo $this->doctype();
+	//http://framework.zend.com/manual/1.10/en/zend.view.helpers.html (see meta charset for html5)
+	$this->headMeta()->setCharset('UTF-8');
 
-<head>
-    <?php echo $this->headTitle() ?>
-    <?php echo $this->headMeta() ?>
-    <?php echo $this->headLink() ?>
-    <?php echo $this->headStyle() ?>
-    <?php echo $this->headScript() ?>
-    <base href="/" />
-</head>
+	$this->headTitle()->setSeparator(' - ');
+	$this->headTitle('Example.com', $setType = 'APPEND');
 
-<body id="page-home">
-    <h1>Default</h1>
-    <?php echo $this->layout()->content ?>
-</body>
+	//Make IE work w/ HTML5
+	$this->headScript()->prependFile(
+						'http://html5shiv.googlecode.com/svn/trunk/html5.js',
+						'text/javascript',
+						array('conditional' => 'IE')
+	);
 
-</html>
+	//Examples
+	//$this->headLink()->appendStylesheet('/css/global.css');
+	//$this->headLink()->appendStylesheet('/css/ie.css', 'screen', 'lte IE 8');
+	$this->headLink(array( 	"rel"	=>	"alternate",
+							"type"	=>	"application/atom+xml",
+							"title"	=>	"Example.com Feed",
+							"href"	=>	"/feed/"
+	));
+	$this->headLink(array( 	"rel"	=>	"shortcut icon",
+							"href"	=>	"/favicon.ico"/*,
+							"sizes"	=>	"16x16" //sizes don't work w/ headlink() yet*/
+	));
+	$this->headLink(array( 	"rel"	=>	"icon",
+							"href"	=>	"/iphone.png"/*,
+							"sizes"	=>	"59x60"	//sizes doesn't work yet with headLink()*/
+	));
+?> 
+<html lang="en">
+<head> 
+    <?php echo $this->headScript(); ?>
+    <?php echo $this->headMeta(); ?>
+    <?php echo $this->headLink(); ?>
+    <?php echo $this->headTitle(); ?>
+    <?php echo $this->headStyle(); //this is for inline style in <head>... ?>
+</head> 
+
+<?php //sample html5 layout?>
+<body>
+
+	<header>
+	  <hgroup>
+	    <h1>Example.com</h1>
+	    <h2>Example motto</h2>
+	  </hgroup>
+	  <nav></nav>
+	</header>
+	<div id="content"> 
+	    <h1>Default <?php echo $this->escape($this->title); ?></h1> 
+	    <?php echo $this->layout()->content; ?> 
+	</div>
+	
+	<nav id="sidebar"></nav>
+	
+	<footer>
+		<nav></nav>
+		<section></section>
+	</footer>
+	
+	<?php echo $this->inlineScript();//for inline script in the body..for <head> script is headScript()?>
+
+</body> 
+</html> 
